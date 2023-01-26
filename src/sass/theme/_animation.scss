@@ -1,0 +1,64 @@
+// .animate-text,
+// .animate-text-body {
+
+//     .word {
+//         display: inline-flex;
+//         overflow: hidden;
+
+//         .char {
+//             display: inline-block;
+//             transform: translateY(100%);
+//         }
+//     }
+// }
+
+// .display-1, 
+// .display-2, 
+// .display-3, 
+// .display-4, 
+// h1, 
+// .is-style-supertitulo, 
+// .animate-text {
+//     opacity: 0;
+//     animation: fade-in-fast .1s ease;
+//     animation-delay: 200ms;
+// }
+
+.splitting {
+
+    .word {
+        display: inline-flex;
+        overflow: hidden;
+        padding-bottom: .1em;
+        margin-bottom: -.1em;
+    }
+    
+    .char {
+        opacity: 0;
+        animation: slide-in .8s cubic-bezier(.5, 0, .5, 1) both;
+        animation-delay: calc(20ms * var(--char-index) + 200ms );
+        transform: translateY(100%);
+    }
+
+}
+  
+  
+@keyframes slide-in {
+    from {
+      transform: translateY(100%);
+      opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+  }
+
+@keyframes fade-in-fast {
+    from {
+      opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+  }

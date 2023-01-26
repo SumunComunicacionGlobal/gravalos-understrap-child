@@ -1,0 +1,29 @@
+.blog-shortcode {
+
+    article {
+        padding-bottom: $spacer;
+
+        &:last-child {
+            border-bottom: 1px solid $primary-40;
+        }
+        
+        .wp-post-image {
+            height: 128px !important;
+            width: 100%;
+            object-fit: cover;
+        }
+
+    }
+
+    .entry-title {
+        font-weight: $font-weight-bold;
+    }
+}
+
+.navbar-light .navbar-nav .nav-link {
+    
+    &.active,
+    &.nav-search-button {
+        font-weight: $font-weight-bold;
+    }
+}

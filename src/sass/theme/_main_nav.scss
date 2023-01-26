@@ -1,0 +1,178 @@
+#wrapper-top-bar {
+    transition: $transition-base;
+    padding: $spacer * .5 0;
+    font-size: $font-size-sm;
+
+	p {
+		margin-bottom: 0;
+	}
+}
+
+#main-nav {
+    transition: $transition-base;
+    background-color: $primary-80;
+
+    .nav-link,
+    .dropdown-item {
+        text-transform: uppercase;
+        font-size: 1rem;
+        
+        &:after {
+            transition: $transition-base;
+        }
+
+    }
+
+    &.navbar-light {
+
+        .logo-light {
+            display: none;
+        }
+    }
+
+    &.navbar-dark {
+
+        .logo-dark {
+            display: none;
+        }
+
+        &.transparent {
+            background-color: transparent;
+        }
+    }
+
+    @include media-breakpoint-down(md) {
+
+
+        .dropdown-menu {
+            background-color: transparent;
+            border: 0;
+            color: $navbar-light-color;
+            padding-left: $spacer * 1.5;
+        }
+
+        .nav-link,
+        .dropdown-item {
+            padding-left: 0;
+
+            &:hover {
+                background-color: transparent;
+                // text-decoration: underline;
+                color: $secondary-60;
+            }
+        }
+
+        li:not(.btn) > .nav-link {
+            border-bottom: 1px solid rgba($white, .2);
+            // font-size: $font-size-base * 1.125;
+        }
+
+        li.btn {
+            margin: $spacer 0;
+        }
+
+        .dropdown-item:hover {
+            color: $secondary-60 !important;
+        }
+        
+        &.navbar-dark {
+
+            .dropdown-item {
+                color: $navbar-dark-color;
+
+                &:hover {
+                    // background-color: $dark;
+                }
+            }
+        }
+    }
+
+    @include media-breakpoint-only(lg) {
+
+        .nav-link,
+        .dropdown-item {
+            font-size: $font-size-sm;
+        }
+
+        .nav-link {
+            letter-spacing: -.5px;
+        }
+
+    }
+
+    @include media-breakpoint-up(lg) {
+
+            li.btn {
+                padding-top: 0;
+                padding-bottom: 0;
+    
+                &:last-child {
+                    margin-left: $spacer/2;
+                }
+            }
+
+    }
+
+}
+
+// .home #main-nav {
+//     padding-top: $spacer * 4;
+// }
+
+.dropdown-toggle {
+
+    &:after {
+        vertical-align: .1em;
+        border: 0;
+        width: .5rem;
+        height: .5rem;
+        background-image: url("data:image/svg+xml,%3Csvg width='4' height='8' viewBox='0 0 4 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0.401234 0.159662L3.83945 3.8632C3.87324 3.89969 3.89014 3.94986 3.89014 4.00003C3.89014 4.0502 3.87324 4.10037 3.83945 4.13686L0.401233 7.84039L0.152026 7.56673L3.46354 4.00003L0.152027 0.433322L0.401234 0.159662Z' fill='%23EAEDF1'/%3E%3Cpath d='M0.401273 -3.14611e-07L3.91553 3.78107C3.96622 3.84037 4 3.9179 4 4C4 4.0821 3.97044 4.15963 3.91553 4.21437L0.401272 8L-4.38957e-07 7.56671L3.31151 4L1.84665e-07 0.433294L0.401273 -3.14611e-07ZM0.401272 7.67617L3.76346 4.05473C3.76346 4.05473 3.78458 4.01824 3.78458 4C3.78458 3.98176 3.77614 3.95895 3.76346 3.94527L0.401272 0.323831L0.299891 0.433294L3.61141 4L0.299891 7.56671L0.401272 7.67617Z' fill='%23EAEDF1'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+}
+
+// body.navbar-transparent,
+// body.home {
+body {
+    
+    &:not(.scrolled):not(.menu-open) #main-nav {
+        background-color: transparent !important;
+    }
+
+    #page-wrapper {
+        padding-top: 0;
+    }
+}
+
+.navbar-brand img {
+    height: 30px;
+    transition: $transition-base;
+}
+
+body {
+
+    &:not(.scrolled) {
+        
+        #main-nav {
+            padding-top: $spacer * 2;
+        }
+    }
+
+    &.scrolled {
+
+        #main-nav {
+            padding-top: $spacer * .5;
+            padding-bottom: $spacer * .5;
+        }
+        
+        .navbar-brand img {
+            height: 20px;
+            width: auto;
+        }
+
+        #wrapper-top-bar {
+            padding-bottom: $spacer / 4;
+        }
+    }
+}

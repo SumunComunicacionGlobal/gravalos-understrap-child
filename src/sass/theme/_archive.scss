@@ -1,0 +1,21 @@
+.hfeed {
+
+    article {
+        margin-bottom: $spacer * 3;
+
+		.wp-post-image:not(.wp-block-cover__image-background) {
+			margin-bottom: $spacer;
+			height: 220px;
+			object-fit: cover;
+		}
+    }
+}
+
+.post-navigation {
+	margin-top: $spacer * 2;
+
+	.nav-links {
+		font-weight: $font-weight-bold;
+	}
+
+}

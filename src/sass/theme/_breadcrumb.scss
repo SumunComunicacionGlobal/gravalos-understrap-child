@@ -1,0 +1,40 @@
+.breadcrumb {
+    @extend .alignfull;
+
+    .breadcrumb-inner {
+        @include make-container();
+        @include make-container-max-widths();
+
+        > *:first-child {
+
+            @include media-breakpoint-up(sm) {
+                padding-left: 4.165%;
+            }
+        }
+    }
+
+    p {
+        margin-bottom: 0;
+    }
+}
+
+.gravalos-breadcrumb,
+.breadcrumbs {
+    font-size: $breadcrumb-font-size;
+    text-transform: uppercase;
+    letter-spacing: -.5px;
+    margin-bottom: $spacer * 2 !important;
+
+    > *:first-child {
+        font-weight: $font-weight-bold;
+    }
+}
+
+.breadcrumb-sep {
+    margin: 0 3px;
+    opacity: .3;
+}
+
+.breadcrumb .current-item {
+    color: $gray-500;
+}

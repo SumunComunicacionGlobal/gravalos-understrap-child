@@ -1,0 +1,134 @@
+#main-menu {
+
+    .sub-menu-toggler {
+        display: none;
+        position: absolute;
+        top: .25rem;
+        left: 100%;
+        width: 2rem;
+        height: 2rem;
+        margin-left: 1rem;
+        border: 1px solid;
+        // border-radius: 40px;
+        text-align: center;
+
+        &:before {
+            content: "+";
+            font-size: 2rem;
+            line-height: .8;
+            font-weight: $font-weight-light;
+        }
+    }
+
+    .dropdown.show > a .sub-menu-toggler:before {
+        content: "-";
+    }
+
+    .dropdown-menu .dropdown-toggle:after {
+        position: absolute;
+        right: .5rem;
+        top: 50%;
+        transform: rotate(-90deg) translateY(-50%);
+    }
+
+    @include media-breakpoint-down(md) {
+
+        li:not(.btn) > .nav-link,
+        .dropdown-item {
+            position: relative;
+            width: calc(100% - 60px);
+        }
+
+        .dropdown-toggle .sub-menu-toggler {
+            display: block;
+        }
+
+        .dropdown-toggle:after {
+            content: none;
+        }
+    }
+
+    @include media-breakpoint-up(lg) {
+
+        .dropdown-menu {
+            top: calc(100% - 3px);
+        }
+
+        .sub-menu {
+            left: -999em;
+            display: block;
+
+            .sub-menu {
+                top: 0!important;
+            }
+
+            li {
+
+                &:hover > ul,
+                &.focus > ul {
+                    display: block;
+                    left: 100%;
+                }
+            }
+
+        }
+
+        li:hover,
+        li.focus {
+
+            > ul {
+                left: auto;
+            }
+        }
+
+        // > li {
+        //     border-top: 2px solid transparent;
+
+        //     &:hover,
+        //     &.focus {
+        //         background-color: $dropdown-bg;
+        //         border-color: $secondary-60;
+        //     }
+
+        //     > a {
+        //         padding-top: $spacer;
+        //         padding-bottom: $spacer;
+        //     }
+        // }
+
+        > li {
+
+            > a {
+                padding-top: $spacer;
+                padding-bottom: $spacer;
+            }
+
+            &:not(.btn) {
+
+                &:before {
+                    content: "";
+                    display: block;
+                    height: 2px;
+                    width: 0;
+                    background-color: $secondary-60;
+                    transition: $transition-base;
+                }
+
+                &:hover,
+                &.focus {
+                    background-color: $dropdown-bg;
+
+                    &:before {
+                        width: 100%;
+                    }
+
+                    > .nav-link:after {
+                        transform: rotate(90deg);
+                    }
+                }
+
+            }
+        }
+    }
+
+}
