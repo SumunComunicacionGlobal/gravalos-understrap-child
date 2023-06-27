@@ -175,6 +175,7 @@ function custom_post_type_caso_de_exito() {
 	$args = array(
 		'label'                 => __( 'Casos de éxito', 'smn' ),
 		'labels'                => $labels,
+		// 'description'			=> __( '', 'smn' ),
 		'supports'              => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'trackbacks', 'custom-fields', 'comments', 'revisions', 'page-attributes' ),
 		'hierarchical'          => false,
 		'public'                => true,
@@ -257,24 +258,24 @@ if ( ! function_exists('cpt_content_fragment_function') ) {
 	function cpt_content_fragment_function() {
 
 		$labels = array(
-			'name'                => _x( 'Fragmentos', 'Post Type General Name', 'kemon' ),
-			'singular_name'       => _x( 'Fragmento', 'Post Type Singular Name', 'kemon' ),
-			'menu_name'           => __( 'Fragmentos de contenido reutilizables', 'kemon' ),
-			'name_admin_bar'      => __( 'Fragmento', 'kemon' ),
-			'parent_item_colon'   => __( 'Fragmento superior:', 'kemon' ),
-			'all_items'           => __( 'Todos los Fragmentos de contenido', 'kemon' ),
-			'add_new_item'        => __( 'Añadir nuevo Fragmento', 'kemon' ),
-			'add_new'             => __( 'Añadir nuevo', 'kemon' ),
-			'new_item'            => __( 'Nuevo Fragmento', 'kemon' ),
-			'edit_item'           => __( 'Editar Fragmento', 'kemon' ),
-			'update_item'         => __( 'Actualizar Fragmento', 'kemon' ),
-			'view_item'           => __( 'Ver Fragmento', 'kemon' ),
-			'search_items'        => __( 'Buscar Fragmento', 'kemon' ),
-			'not_found'           => __( 'No se han encontrado Fragmentos', 'kemon' ),
-			'not_found_in_trash'  => __( 'No se han encontrado Fragmentos en la papelera', 'kemon' ),
+			'name'                => _x( 'Fragmentos', 'Post Type General Name', 'smn' ),
+			'singular_name'       => _x( 'Fragmento', 'Post Type Singular Name', 'smn' ),
+			'menu_name'           => __( 'Fragmentos de contenido reutilizables', 'smn' ),
+			'name_admin_bar'      => __( 'Fragmento', 'smn' ),
+			'parent_item_colon'   => __( 'Fragmento superior:', 'smn' ),
+			'all_items'           => __( 'Todos los Fragmentos de contenido', 'smn' ),
+			'add_new_item'        => __( 'Añadir nuevo Fragmento', 'smn' ),
+			'add_new'             => __( 'Añadir nuevo', 'smn' ),
+			'new_item'            => __( 'Nuevo Fragmento', 'smn' ),
+			'edit_item'           => __( 'Editar Fragmento', 'smn' ),
+			'update_item'         => __( 'Actualizar Fragmento', 'smn' ),
+			'view_item'           => __( 'Ver Fragmento', 'smn' ),
+			'search_items'        => __( 'Buscar Fragmento', 'smn' ),
+			'not_found'           => __( 'No se han encontrado Fragmentos', 'smn' ),
+			'not_found_in_trash'  => __( 'No se han encontrado Fragmentos en la papelera', 'smn' ),
 		);
 		$args = array(
-			'label'               => __( 'Fragmentos de contenido', 'kemon' ),
+			'label'               => __( 'Fragmentos de contenido', 'smn' ),
 			'labels'              => $labels,
 			'supports'            => array( 'title', 'editor', 'author' ),
 			'hierarchical'        => false,
@@ -308,23 +309,23 @@ if ( ! function_exists( 'product_cat_function' ) ) {
 	function product_cat_function() {
 
 		$labels = array(
-			'name'                       => _x( 'Familias de Producto', 'Taxonomy General Name', 'kemon' ),
-			'singular_name'              => _x( 'Familia de Producto', 'Taxonomy Singular Name', 'kemon' ),
-			'menu_name'                  => __( 'Familias de Producto', 'kemon' ),
-			'all_items'                  => __( 'Todas las Familias de Producto', 'kemon' ),
-			'parent_item'                => __( 'Familia de Producto superior', 'kemon' ),
-			'parent_item_colon'          => __( 'Familia de Producto superior:', 'kemon' ),
-			'new_item_name'              => __( 'Nueva Familia de Producto', 'kemon' ),
-			'add_new_item'               => __( 'Añadir Nueva Familia de Producto', 'kemon' ),
-			'edit_item'                  => __( 'Editar Familia de Producto', 'kemon' ),
-			'update_item'                => __( 'Actualizar Familia de Producto', 'kemon' ),
-			'view_item'                  => __( 'Ver Familia de Producto', 'kemon' ),
-			'separate_items_with_commas' => __( 'Separar Familia de Producto con comas', 'kemon' ),
-			'add_or_remove_items'        => __( 'Añadir o eliminar Familia de Producto', 'kemon' ),
-			'choose_from_most_used'      => __( 'Elegir de entre las más usadas', 'kemon' ),
-			'popular_items'              => __( 'Familias de Producto populares', 'kemon' ),
-			'search_items'               => __( 'Buscar Familias de Producto', 'kemon' ),
-			'not_found'                  => __( 'No encontrada', 'kemon' ),
+			'name'                       => _x( 'Familias de Producto', 'Taxonomy General Name', 'smn' ),
+			'singular_name'              => _x( 'Familia de Producto', 'Taxonomy Singular Name', 'smn' ),
+			'menu_name'                  => __( 'Familias de Producto', 'smn' ),
+			'all_items'                  => __( 'Todas las Familias de Producto', 'smn' ),
+			'parent_item'                => __( 'Familia de Producto superior', 'smn' ),
+			'parent_item_colon'          => __( 'Familia de Producto superior:', 'smn' ),
+			'new_item_name'              => __( 'Nueva Familia de Producto', 'smn' ),
+			'add_new_item'               => __( 'Añadir Nueva Familia de Producto', 'smn' ),
+			'edit_item'                  => __( 'Editar Familia de Producto', 'smn' ),
+			'update_item'                => __( 'Actualizar Familia de Producto', 'smn' ),
+			'view_item'                  => __( 'Ver Familia de Producto', 'smn' ),
+			'separate_items_with_commas' => __( 'Separar Familia de Producto con comas', 'smn' ),
+			'add_or_remove_items'        => __( 'Añadir o eliminar Familia de Producto', 'smn' ),
+			'choose_from_most_used'      => __( 'Elegir de entre las más usadas', 'smn' ),
+			'popular_items'              => __( 'Familias de Producto populares', 'smn' ),
+			'search_items'               => __( 'Buscar Familias de Producto', 'smn' ),
+			'not_found'                  => __( 'No encontrada', 'smn' ),
 		);
 		$args = array(
 			'labels'                     => $labels,
@@ -336,7 +337,7 @@ if ( ! function_exists( 'product_cat_function' ) ) {
 			'show_tagcloud'              => true,
 			'show_in_rest'				 => true,
 			'rewrite'					 => array(
-											'slug'			=> __( 'product-cat', 'kemon' ),
+											'slug'			=> __( 'product-cat', 'smn' ),
 											'with_front'	=> true,
 											'hierarchical'	=> false,
 										 ),
@@ -356,23 +357,23 @@ if ( ! function_exists( 'product_tag_function' ) ) {
 	function product_tag_function() {
 
 		$labels = array(
-			'name'                       => _x( 'Etiquetas de Producto', 'Taxonomy General Name', 'kemon' ),
-			'singular_name'              => _x( 'Etiqueta de Producto', 'Taxonomy Singular Name', 'kemon' ),
-			'menu_name'                  => __( 'Etiquetas de Producto', 'kemon' ),
-			'all_items'                  => __( 'Todas las Etiquetas de Producto', 'kemon' ),
-			'parent_item'                => __( 'Etiqueta de Producto superior', 'kemon' ),
-			'parent_item_colon'          => __( 'Etiqueta de Producto superior:', 'kemon' ),
-			'new_item_name'              => __( 'Nueva Etiqueta de Producto', 'kemon' ),
-			'add_new_item'               => __( 'Añadir Nueva Etiqueta de Producto', 'kemon' ),
-			'edit_item'                  => __( 'Editar Etiqueta de Producto', 'kemon' ),
-			'update_item'                => __( 'Actualizar Etiqueta de Producto', 'kemon' ),
-			'view_item'                  => __( 'Ver Etiqueta de Producto', 'kemon' ),
-			'separate_items_with_commas' => __( 'Separar Etiqueta de Producto con comas', 'kemon' ),
-			'add_or_remove_items'        => __( 'Añadir o eliminar Etiqueta de Producto', 'kemon' ),
-			'choose_from_most_used'      => __( 'Elegir de entre las más usadas', 'kemon' ),
-			'popular_items'              => __( 'Etiquetas de Producto populares', 'kemon' ),
-			'search_items'               => __( 'Buscar Etiquetas de Producto', 'kemon' ),
-			'not_found'                  => __( 'No encontrada', 'kemon' ),
+			'name'                       => _x( 'Etiquetas de Producto', 'Taxonomy General Name', 'smn' ),
+			'singular_name'              => _x( 'Etiqueta de Producto', 'Taxonomy Singular Name', 'smn' ),
+			'menu_name'                  => __( 'Etiquetas de Producto', 'smn' ),
+			'all_items'                  => __( 'Todas las Etiquetas de Producto', 'smn' ),
+			'parent_item'                => __( 'Etiqueta de Producto superior', 'smn' ),
+			'parent_item_colon'          => __( 'Etiqueta de Producto superior:', 'smn' ),
+			'new_item_name'              => __( 'Nueva Etiqueta de Producto', 'smn' ),
+			'add_new_item'               => __( 'Añadir Nueva Etiqueta de Producto', 'smn' ),
+			'edit_item'                  => __( 'Editar Etiqueta de Producto', 'smn' ),
+			'update_item'                => __( 'Actualizar Etiqueta de Producto', 'smn' ),
+			'view_item'                  => __( 'Ver Etiqueta de Producto', 'smn' ),
+			'separate_items_with_commas' => __( 'Separar Etiqueta de Producto con comas', 'smn' ),
+			'add_or_remove_items'        => __( 'Añadir o eliminar Etiqueta de Producto', 'smn' ),
+			'choose_from_most_used'      => __( 'Elegir de entre las más usadas', 'smn' ),
+			'popular_items'              => __( 'Etiquetas de Producto populares', 'smn' ),
+			'search_items'               => __( 'Buscar Etiquetas de Producto', 'smn' ),
+			'not_found'                  => __( 'No encontrada', 'smn' ),
 		);
 		$args = array(
 			'labels'                     => $labels,
@@ -384,7 +385,7 @@ if ( ! function_exists( 'product_tag_function' ) ) {
 			'show_tagcloud'              => true,
 			'show_in_rest'				 => true,
 			'rewrite'					 => array(
-											'slug'			=> __( 'product-tag', 'kemon' ),
+											'slug'			=> __( 'product-tag', 'smn' ),
 											'with_front'	=> true,
 											'hierarchical'	=> false,
 										 ),
@@ -476,7 +477,7 @@ function smn_columns_head($defaults) {
 // SHOW THE FEATURED IMAGE
 function smn_columns_content($column_name, $post_ID) {
     if ($column_name == 'featured_image') {
-    	echo '<div style="height:100px;">' . get_the_post_thumbnail( $post_ID, array(80,80) ) . '</div>';
+    	echo '<div style="height:100px;width:auto;">' . get_the_post_thumbnail( $post_ID, 'medium' ) . '</div>';
 
     }
     if ($column_name == 'extracto') {

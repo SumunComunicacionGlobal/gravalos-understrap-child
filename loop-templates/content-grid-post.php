@@ -17,7 +17,7 @@ if ( isset( $args['html_label'] ) ) $html_label = $args['html_label'];
 
 	<div class="wp-block-cover has-background-dim">
 
-		<span aria-hidden="true" class="wp-block-cover__background"></span>
+		<span aria-hidden="true" class="wp-block-cover__background has-primary-background-color"></span>
 
 		<?php echo get_the_post_thumbnail( $post->ID, 'medium_large', array( 'class' => 'wp-block-cover__image-background' ) ); ?>
 

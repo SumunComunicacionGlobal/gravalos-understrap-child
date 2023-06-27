@@ -39,7 +39,7 @@ if ( is_singular() ) {
 
 	 } else { ?>
 		
-		<img class="wp-block-cover__image-background wp-block-cover__placeholder-image-background" src="<?php echo get_stylesheet_directory_uri(); ?>/img/placeholder-gravalos.svg" alt="<?php _e( 'Icono Grávalos', 'gravalos' ); ?>" />
+		<img class="wp-block-cover__image-background wp-block-cover__placeholder-image-background" src="<?php echo get_stylesheet_directory_uri(); ?>/img/placeholder-gravalos.svg" alt="<?php _e( 'Icono Grávalos', 'smn' ); ?>" />
 
 	 <?php } ?>
 

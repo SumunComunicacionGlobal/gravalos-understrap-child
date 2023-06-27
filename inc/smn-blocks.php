@@ -203,6 +203,25 @@ function list_block_wrapper( $block_content, $block ) {
 
     return $block_content;
 }
+
+add_filter( 'render_block', 'media_text_block_wrapper', 10, 2 );
+function media_text_block_wrapper( $block_content, $block ) {
+    if ( $block['blockName'] === 'core/media-text' ) {
+        $block_content = str_replace( 
+            array( 
+                '<video ',
+                '"></video>'
+            ), 
+            array( 
+                '<video preload="metadata" ',
+                '#t=0.001"></video>'
+            ), 
+            $block_content 
+        );
+    }
+
+    return $block_content;
+}
  
 add_filter( 'render_block', 'header_cover_breadcrumb', 10, 2 );
 function header_cover_breadcrumb( $block_content, $block ) {

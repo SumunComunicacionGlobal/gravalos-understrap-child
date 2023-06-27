@@ -6,7 +6,7 @@
     padding: 0;
     
     #main {
-        padding-bottom: 10rem;
+        padding-bottom: 4rem;
     }
 }
 
@@ -28,40 +28,53 @@
 //     @extend .col-md-10;
 // }
 
-body.understrap-no-sidebar #main {
+body.understrap-no-sidebar {
+    
+    #main,
+    #prefooter-cta-contacto {
 
-    @include media-breakpoint-up(sm) {
-        position: relative;
-        // border-left: 1px solid $gray-100;
-        // border-right: 1px solid $gray-100;
-        padding-left: 4.16%;
-        padding-right: 4.16%;
+        @include media-breakpoint-up(sm) {
+            position: relative;
+            // border-left: 1px solid $gray-100;
+            // border-right: 1px solid $gray-100;
+            padding-left: 4.16%;
+            padding-right: 4.16%;
 
-        &:before,
-        &:after {
-            content: "";
-            display: block;
-            position: absolute;
-            z-index: -100;
-            width: 1px;
-            left: 0;
-            top: 0;
-            bottom: 0;
-            background-color: rgba($dark, .1);
+            &:before,
+            &:after {
+                content: "";
+                display: block;
+                position: absolute;
+                z-index: -100;
+                width: 1px;
+                left: 0;
+                top: 0;
+                bottom: 0;
+                background-color: rgba($dark, .1);
 
+            }
+
+            &:after {
+                left: unset;
+                right: 0;
+            }
         }
 
-        &:after {
-            left: unset;
-            right: 0;
+        @include media-breakpoint-up(lg) {
+            padding-left: 8.3333333333%;
+            padding-right: 8.3333333333%;
         }
+
     }
 
-    @include media-breakpoint-up(lg) {
-        padding-left: 8.3333333333%;
-        padding-right: 8.3333333333%;
-    }
+}
 
+.single-post {
+
+    #main,
+    #prefooter-cta-contacto {
+        background-color: $white;
+    }
 }
 
 

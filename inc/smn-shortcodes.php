@@ -27,7 +27,7 @@ function contenido_pagina($atts) {
 			$content = $content_post->post_content;
 			$content = '<div class="post-content-container">'.apply_filters('the_content', $content) .'</div>';
 			if ('si' == $imagen) {
-				$content = '<div class="entry-thumbnail">'.get_the_post_thumbnail($id, 'full') . '</div>' . $content;
+				$content = '<div class="entry-thumbnail">'.get_the_post_thumbnail($id, 'large') . '</div>' . $content;
 			}
 			return $content;
 		}
@@ -80,9 +80,19 @@ function post_link_sh( $atts ) {
 }
 add_shortcode('post_link', 'post_link_sh');
 
-function paginas_hijas() {
+function paginas_hijas( $atts ) {
+
+	extract( shortcode_atts(
+		array(
+				'id' 				=> false,
+				'layout'			=> false,
+		), $atts)	
+	);
+
 	global $post;
+
 	if ( is_post_type_hierarchical( $post->post_type ) /*&& '' == $post->post_content */) {
+
 		$args = array(
 			'post_type'			=> array($post->post_type),
 			'posts_per_page'	=> -1,
@@ -91,27 +101,51 @@ function paginas_hijas() {
 			'order'				=> 'ASC',
 			'post_parent'		=> $post->ID,
 		);
+
+		if ( $id ) {
+			$args['post_parent'] = $id;
+		}
+
 		$r = '';
+
 		$query = new WP_Query($args);
+
 		if ($query->have_posts() ) {
-			$r .= '<div class="wrapper contenido-adicional mt-5">';
-			// $r .= '<h3>'.__( 'Contenido en', 'smn' ).' "'.$post->post_title.'"</h3>';
-			// $r .= '<ul>';
-			while($query->have_posts() ) {
-				$query->the_post();
-				// $r .= '<li>';
-					$r .= '<a class="btn btn-primary btn mr-2 mb-2 pagina-hija" href="'.get_permalink( get_the_ID() ).'" title="'.get_the_title().'" role="button" aria-pressed="false">'.get_the_title().'</a>';
-				$r .= '</li>';
-			}
-			// $r .= '</ul>';
-			// $r .= '</div>';
+
+			if ( 'circulo' == $layout ) $r .= '<div class="slick-carousel">';
+
+				while($query->have_posts() ) { $query->the_post();
+
+					if ( 'circulo' == $layout ) {
+
+						$r .= '<div class="pagina-hija-circulo stretch-linked-block">';
+
+							$r .= get_the_post_thumbnail( null, 'thumbnail', array( 'class' => 'rounded-circle mb-3 shadow' ) );
+
+							$r .= '<p class="small text-uppercase font-weight-bold"><a class="stretched-link" href="'.get_permalink( get_the_ID() ).'" title="'.get_the_title().'">'.get_the_title().'</a></p>';
+
+							$r .= '<div class="small">' . get_the_excerpt() . '</div>';
+
+						$r .= '</div>';
+
+					} else {
+
+						$r .= '<a class="btn btn-outline-primary mr-2 mb-2 pagina-hija" href="'.get_permalink( get_the_ID() ).'" title="'.get_the_title().'" role="button" aria-pressed="false">'.get_the_title().'</a>';
+
+					}
+
+				}
+
+			if ( 'circulo' == $layout ) $r .= '</div>';
+
+
 		} elseif(0 != $post->post_parent) {
 			wp_reset_postdata();
 			$current_post_id = get_the_ID();
 			$args['post_parent'] = $post->post_parent;
 			$query = new WP_Query($args);
 			if ($query->have_posts() && $query->found_posts > 1 ) {
-				$r .= '<div class="wrapper contenido-adicional">';
+
 				while($query->have_posts() ) {
 					$query->the_post();
 					if ($current_post_id == get_the_ID()) {
@@ -120,9 +154,10 @@ function paginas_hijas() {
 						$r .= '<a class="btn btn-outline-primary btn-sm mr-2 mb-2" href="'.get_permalink( get_the_ID() ).'" title="'.get_the_title().'" role="button" aria-pressed="false">'.get_the_title().'</a>';
 					}
 				}
-				$r .= '</div>';
+
 			}
 		}
+
 		wp_reset_postdata();
 		return $r;
 	}

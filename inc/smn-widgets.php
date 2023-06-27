@@ -160,9 +160,9 @@ function understrap_widgets_init() {
 
 	register_sidebar(
 		array(
-			'name'          => __( 'Tabla de contenido de los casos de éxito', 'gravalos' ),
+			'name'          => __( 'Tabla de contenido de los casos de éxito', 'smn' ),
 			'id'            => 'toc-casos-exito',
-			'description'   => __( 'Inserta aquí un bloque de Gutenberg de Tabla de Contenidos', 'gravalos' ),
+			'description'   => __( 'Inserta aquí un bloque de Gutenberg de Tabla de Contenidos', 'smn' ),
 			'before_widget' => '<div id="%1$s" class="%2$s">',
 			'after_widget'  => '</div>',
 			'before_title'  => '<p class="widget-title">',

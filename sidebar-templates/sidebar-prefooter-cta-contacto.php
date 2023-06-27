@@ -11,9 +11,17 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 	<div id="wrapper-prefooter-cta-contacto">
 
-		<div class="<?php echo esc_attr( $container ); ?>" id="prefooter-cta-contacto" tabindex="-1">
+		<div class="<?php echo esc_attr( $container ); ?>">
+		
+			<div id="prefooter-cta-contacto" tabindex="-1">
 
-			<?php dynamic_sidebar( 'prefooter-cta-contacto' ); ?>
+				<div id="prefooter-cta-contacto-inner">
+
+					<?php dynamic_sidebar( 'prefooter-cta-contacto' ); ?>
+
+				</div>
+
+			</div>
 
 		</div>
 

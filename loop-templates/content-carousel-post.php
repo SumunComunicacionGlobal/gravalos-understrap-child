@@ -19,7 +19,7 @@ if ( isset( $args['html_label'] ) ) $html_label = $args['html_label'];
 
 	<div class="wp-block-cover has-background-dim">
 
-		<span aria-hidden="true" class="wp-block-cover__background"></span>
+		<span aria-hidden="true" class="wp-block-cover__background has-primary-background-color"></span>
 
 		<?php echo get_the_post_thumbnail( $post->ID, 'medium_large', array( 'class' => 'wp-block-cover__image-background' ) ); ?>
 
@@ -38,7 +38,7 @@ if ( isset( $args['html_label'] ) ) $html_label = $args['html_label'];
 				<?php
 				echo $current_post;
 				the_title(
-					sprintf( '<%s class="h4 entry-title"><a class="stretched-link" href="%s" rel="bookmark">', $html_label, esc_url( get_permalink() ) ),
+					sprintf( '<%s class="entry-title"><a class="stretched-link" href="%s" rel="bookmark">', $html_label, esc_url( get_permalink() ) ),
 					'</a></'.$html_label.'>'
 				);
 				?>
@@ -60,4 +60,4 @@ if ( isset( $args['html_label'] ) ) $html_label = $args['html_label'];
 
 	</div>
 
-</article><!-- #post-## -->
+</article>

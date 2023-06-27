@@ -36,7 +36,7 @@ function understrap_all_excerpts_get_more_link( $post_excerpt ) {
             $post_excerpt .= '<div class="wp-block-button is-style-arrow-link">';
                 // $post_excerpt .= '<a class="wp-block-button__link" href="' . esc_url( get_permalink( get_the_ID() ) ) . '">';
                 $post_excerpt .= '<span class="wp-block-button__link">';
-                    $post_excerpt .= __( 'Saber más', 'gravalos' );
+                    $post_excerpt .= __( 'Saber más', 'smn' );
                 $post_excerpt .= '</span>';
                 // $post_excerpt .= '</a>';
             $post_excerpt .= '</div>';

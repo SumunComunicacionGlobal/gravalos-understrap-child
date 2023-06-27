@@ -13,7 +13,7 @@ if (is_active_sidebar( 'top-bar' )) { ?>
             <div class="container">
         <?php endif; ?>
 
-            <div class="row justify-content-center justify-content-md-end">
+            <div class="d-flex justify-content-center justify-content-md-end">
                 <?php dynamic_sidebar( 'top-bar' ); ?>
             </div>
 

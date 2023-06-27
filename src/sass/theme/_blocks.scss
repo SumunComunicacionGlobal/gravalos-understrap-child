@@ -11,7 +11,8 @@ body.understrap-no-sidebar {
     // }
 
     .alignwide {
-        margin: 0;
+        // margin: 0;
+        margin: 0 -4.16%;
         width: 100%;
         max-width: unset;
     }
@@ -293,6 +294,13 @@ body.understrap-no-sidebar {
     > .wp-block-cover {
         padding-top: $spacer * 2;
     }
+
+    .entry-title {
+        text-transform: none;
+        font-size: $font-size-base * 1.4;
+        font-style: italic;
+        font-weight: $font-weight-normal;
+    }
 }
 
 .carousel-post {
@@ -479,7 +487,7 @@ figure.wp-block-image figcaption {
 
         @include media-breakpoint-up(md) {
             width: 50vw;
-            margin: 0 -1em 0 calc(100% - 44vw);
+            margin: 0 -1em 0 calc(100% - 48vw);
             height: 100%;
         }
     }

@@ -32,6 +32,6 @@ $blog_page_id = get_option( 'page_for_posts' );
 
 if ( $blog_page_id ) { ?>
 
-	<p class="text-right lead"><a class="right-arrow-link" href="<?php echo get_the_permalink( $blog_page_id ); ?>" title="<?php _e( 'Explorar el blog', 'gravalos' ); ?>"><?php _e( 'Explorar el blog', 'gravalos' ); ?></a></p>
+	<p class="text-right lead"><a class="right-arrow-link" href="<?php echo get_the_permalink( $blog_page_id ); ?>" title="<?php _e( 'Explorar el blog', 'smn' ); ?>"><?php _e( 'Explorar el blog', 'smn' ); ?></a></p>
 
 <?php }

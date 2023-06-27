@@ -22,11 +22,11 @@ function smn_get_attachment_alt( $attachment_ID ) {
     }
     
     // Use caption if no ALT supplied
-    if ( empty( $thumb_alt ) )
+    if ( $attachment && empty( $thumb_alt ) )
         $thumb_alt = $attachment->post_excerpt;
     
     // Use title if no caption supplied either
-    if ( empty( $thumb_alt ) )
+    if ( $attachment && empty( $thumb_alt ) )
         $thumb_alt = $attachment->post_title;
 
     // Use current post title if no title supplied either
@@ -65,4 +65,23 @@ function wpdocs_filter_gallery_img_atts( $atts, $attachment ) {
         $atts['title'] = smn_get_attachment_alt($attachment->ID);
     }
     return $atts;
+}
+
+add_action( 'wp_head', 'smn_meta_description' );
+function smn_meta_description() {
+
+    $description = '';
+
+    if ( is_singular() ) {
+        global $post;
+        $description = wp_trim_words( $post->post_content, 200 );
+    } elseif ( is_tax() || is_category() || is_tag() || is_author() || is_post_type_archive() ) {
+        $description = get_the_archive_description();
+    }
+
+    if ( $description ) {
+        // $description = strip_tags( $description );
+        echo '<meta name="description" content="' . $description . '">';
+    }
+
 }

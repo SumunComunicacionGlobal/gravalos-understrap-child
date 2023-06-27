@@ -47,14 +47,14 @@ function smn_body_classes( $classes ) {
 add_filter( 'post_class', 'bootstrap_post_class', 10, 3 );
 function bootstrap_post_class( $classes, $class, $post_id ) {
 
-    if ( !in_the_loop() ) return false; 
+    if ( !in_the_loop() ) return $classes; 
 
     if ( is_archive() || is_home() || is_search() ) {
 
         if ( 'casos-exito' == get_post_type() ) {
-            $classes[] = 'col-sm-6 stretch-linked-block';
+            $classes = array_merge( $classes, array( 'col-sm-6', 'stretch-linked-block' ) );
         } else {
-            $classes[] = 'col-sm-6 col-lg-4 stretch-linked-block';
+            $classes = array_merge( $classes, array( 'col-sm-6', 'col-lg-4', 'stretch-linked-block' ) );
         }
     }
 
