@@ -15,7 +15,7 @@ $html_label = 'h2';
 if ( isset( $args['html_label'] ) ) $html_label = $args['html_label'];
 ?>
 
-<article class="carousel-post" id="post-<?php the_ID(); ?>">
+<article class="carousel-post stretch-linked-block" id="post-<?php the_ID(); ?>">
 
 	<div class="wp-block-cover has-background-dim">
 

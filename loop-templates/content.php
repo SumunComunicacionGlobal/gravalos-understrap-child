@@ -13,7 +13,7 @@ if ( isset( $args['html_label'] ) ) $html_label = $args['html_label'];
 
 ?>
 
-<article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
+<article <?php post_class( 'stretch-linked-block' ); ?> id="post-<?php the_ID(); ?>">
 
 	<?php echo get_the_post_thumbnail( $post->ID, 'large' ); ?>
 

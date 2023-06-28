@@ -13,7 +13,7 @@ if ( isset( $args['html_label'] ) ) $html_label = $args['html_label'];
 
 ?>
 
-<article <?php post_class( 'grid-post' ); ?> id="post-<?php the_ID(); ?>">
+<article <?php post_class( 'grid-post stretch-linked-block' ); ?> id="post-<?php the_ID(); ?>">
 
 	<div class="wp-block-cover has-background-dim">
 
